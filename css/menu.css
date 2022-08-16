@@ -52,11 +52,15 @@ h1 {
 @media (max-width: 816px) {
  #close{
   display: none;
+<<<<<<< HEAD
  }
  input{
   width: 400px;
   height: 30px;
  }
+=======
+  }
+>>>>>>> 1894e80b6ed8ae6a4edb127db763f8fda4608592
   #menu .bar {
     display: flex;
     justify-content: center;
