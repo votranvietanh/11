@@ -43,7 +43,9 @@ h1 {
   display: none;
 }
 @media (max-width: 816px) {
-
+ #close{
+  display: none;
+  }
   #menu .bar {
     display: flex;
     justify-content: center;
