@@ -1,1 +1,1 @@
-# smartFarming
+# https://votranvietanh.github.io/smartFarming/
