@@ -1,6 +1,4 @@
-const footer = document.querySelector('footer');
-footer.innerHTML = `
-<div class="footer__container">
+const footer = document.querySelector('footer').innerHTML = `<div class="footer__container">
 <div class="grid wide">
   <div class="row">
     <div class="col l-4 m-6 c-6 s-12 center pt-20">

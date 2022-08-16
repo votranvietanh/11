@@ -1,16 +1,21 @@
+// CONTROL MENU 
 function openMenu() {
   document.getElementById('menu1').style.display = 'block';
   document.getElementById('open').style.display = 'none';
   document.getElementById('close').style.display = 'block';
+  document.querySelector('.bar').style = `margin-top:245px`;
 }
 
 function closeMenu() {
   document.getElementById('menu1').style.display = 'none';
   document.getElementById('open').style.display = 'block ';
   document.getElementById('close').style.display = 'none';
+  document.querySelector('.bar').style = `margin-top:0px`;
+
 }
 
-// lấy id
+
+// SLIDE-SHOW 
 let theImg = document.getElementsByTagName('img').length;
 let index = 0;
 function right() {

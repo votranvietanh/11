@@ -13,21 +13,7 @@
 </head>
 
 <body>
-	<header id="menu">
-		<div class="bar">
-			<input type="text" name="" id="search"><i class="fa fa-search"></i>
-			<i id="open" onclick="openMenu()" class="fa fa-bars"></i>
-			<i id="close" onclick="closeMenu()" class="fa fa-bars"></i>
-		</div>
-		<ul class="menu" id="menu1">
-			<li><a href="./index.html">Homepage</a></li>
-			<li><a href="./service.html">Service</a></li>
-			<li class="active"><a href="./product.html">Product</a></li>
-			<li><a href="./introduce.html">Introduce</a></li>
-			<li><a href="">Liên hệ </a></li>
-		</ul>
-
-	</header>
+	<header id="menu">	</header>
 	<div class="main">
 
 		<div class="grid wide">
@@ -118,7 +104,7 @@
 		</div>
 
 	</div>
-
+    <footer> </footer>
 
 	<script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
@@ -175,8 +161,8 @@
 		dbRef8.on('value', snap => Cachua.innerText = snap.val());
 	</script>
 	<script src="./js/menu.js"></script>
-	<script src="./js/header.js"></script>
 	<script src="./js/footer.js"></script>
+	<script src="./js/header.js"></script>
 </body>
 
 </html>

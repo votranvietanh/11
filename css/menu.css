@@ -25,11 +25,14 @@ h1 {
 
 
 .container-fluid {
+  position: fixed;
+  top:0;
   width: 100%;
   display: flex;
   justify-content: space-evenly;
   padding: 30px;
   background-color: #61e0a5;
+  z-index: 2;
 }
 
 #menu1 li a {
@@ -39,15 +42,26 @@ h1 {
   color: rgb(233, 19, 23);
   line-height: 1.6;
 }
+
 #menu .bar {
   display: none;
 }
+.main{
+  margin-top: 105px;
+}
 @media (max-width: 816px) {
-
+ #close{
+  display: none;
+ }
+ input{
+  width: 400px;
+  height: 30px;
+ }
   #menu .bar {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 35px;
 
   }
 
