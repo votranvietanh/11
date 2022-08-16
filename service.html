@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Service</title>
+<link rel="stylesheet" href="./css/service.css">
+<link rel="stylesheet" href="./css/menu.css">
+<link rel="stylesheet" href="./css/grid.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+
+<body>
+  <div id="menu">
+    <ul class="menu" id="menu1">
+      <li><a href="./index.html">Homepage</a></li>
+      <li><a href="./service.html">Service</a></li>
+      <li><a href="./product.html">Product</a></li>
+      <li><a href="./introduce.html">Introduce</a></li>
+      <li><a href="">Liên hệ </a></li>
+    </ul>
+
+    <div class="bar">
+      <input type="text" name="" id="search"><i class="fa fa-search"></i>
+      <i id="open" onclick="openMenu()" class="fa fa-bars"></i>
+      <i id="close" onclick="closeMenu()" class="fa fa-bars"></i>
+    </div>
+
+  </div>
+  <div class="main">
+
+    <h1 id="currentTime"></h1>
+
+
+    <h1 id="nhietdo"></h1>
+    <h1 id="doam"></h1><br>
+
+
+    <div class="led1 grid wide">
+      <div class="center">
+        <div class="led col l-2 m-4 s-8 mb-2 ">
+          <img id="led1" src="./img/led_off.png"> <br>
+          <button type="button" id="btn_on">ON</button> <br>
+          <button type="button" id="btn_off">OFF</button>
+        </div>
+
+        <div class="led col l-2 m-4 s-8 mb-2 text-center">
+          <img id="led2" src="./img/led_off.png"> <br>
+          <button type="button" id="btn_on2">ON</button> <br>
+          <button type="button" id="btn_off2">OFF</button>
+        </div>
+
+        <div class="led col l-2 m-4 s-8 mb-2">
+          <img id="led3" src="./img/led_off.png"> <br>
+          <button type="button" id="btn_on3">ON</button> <br>
+          <button type="button" id="btn_off3">OFF</button>
+        </div>
+
+        <div class="led col l-2 m-4 s-8 mb-2">
+          <img id="led4" src="./img/led_off.png"> <br>
+          <button type="button" id="btn_on4">ON</button> <br>
+          <button type="button" id="btn_off4">OFF</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+
+<script src="./js/function.js"> </script>
+<script src="./js/fireBase.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyCIUndFSyUsdnB3qwN13bvgPE0Y-az4r0s",
+    authDomain: "smfarming.firebaseapp.com",
+    projectId: "smfarming",
+    databaseURL: "https://smfarming-default-rtdb.firebaseio.com/",
+    storageBucket: "smfarming.appspot.com",
+    messagingSenderId: "878194189564",
+    appId: "1:878194189564:web:9f8b2c7642f1567fcce379",
+    measurementId: "G-Q5GWVVPGNK"
+  };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+
+
+  // Initialize Firebase
+  var nhietDo = document.getElementById('nhietdo');
+  var dbRef = firebase.database().ref().child('Nhiet do');
+  var doAm = document.getElementById('doam');
+  var dbRef2 = firebase.database().ref().child('Do am');
+  dbRef.on('value', snap => nhietDo.innerText = "Temperature: " + snap.val() + "ºC");
+  dbRef2.on('value', snap => doAm.innerText = "Huminity: " + snap.val() + "%");
+
+</script>
+<script src="./js/menu.js"></script>
+<script src="./js/header.js"></script>
+<script src="./js/footer.js"></script>

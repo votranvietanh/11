@@ -1,0 +1,32 @@
+
+body{
+  background-image: url(img/backgroundd.jpg);
+}
+.led1 {
+  
+  text-align: center;
+}
+.center{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+button {
+  width: 180px;
+  color: red;
+  font-size: 12px;
+  padding: 12px 0;
+  background: #000000;
+  border: 0;
+  outline: none;
+  border-radius: 20px;
+  margin-top: 30px;
+  border: 2px solid #009688;
+  background: #0f4c1759;
+  color: red;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Product</title>
+	<link rel="stylesheet" href="./css/product.css">
+	<link rel="stylesheet" href="./css/grid.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+	<link rel="stylesheet" href="./css/menu.css">
+</head>
+
+<body>
+	<header id="menu">
+		<div class="bar">
+			<input type="text" name="" id="search"><i class="fa fa-search"></i>
+			<i id="open" onclick="openMenu()" class="fa fa-bars"></i>
+			<i id="close" onclick="closeMenu()" class="fa fa-bars"></i>
+		</div>
+		<ul class="menu" id="menu1">
+			<li><a href="./index.html">Homepage</a></li>
+			<li><a href="./service.html">Service</a></li>
+			<li class="active"><a href="./product.html">Product</a></li>
+			<li><a href="./introduce.html">Introduce</a></li>
+			<li><a href="">Liên hệ </a></li>
+		</ul>
+
+	</header>
+	<div class="main">
+
+		<div class="grid wide">
+		</div>
+		<h1>CHỢ NÔNG SẢN</h1>
+		<div class="main__product row">
+
+			<div class="product__item col l-3 s-8 m-4">
+				<div class="product__sale">-10%</div>
+				<div class="product__content">
+					<img src="./img/bapcai.jpg">
+					<p>Bông cải xanh</p>
+					<p id="BC"></p>
+				</div>
+			</div>
+
+			<div class="product__item col l-3 s-8 m-4">
+				<div class="product__sale">-20%</div>
+				<div class="product__content">
+					<img src="./img/carot.jpeg">
+					<p>Cà rốt</p>
+					<p id="CR"></p>
+				</div>
+			</div>
+			<div class="product__item col l-3 s-8 m-4">
+				<div class="product__sale">-10%</div>
+				<div class="product__content">
+					<img src="./img/otchuong.jpg">
+					<p>Ớt chuông</p>
+					<p id="OC"></p>
+				</div>
+			</div>
+
+
+			<div class="product__item col l-3 s-8 m-4">
+				<div class="product__sale">-30%</div>
+				<div class="product__content">
+					<img src="./img/khoaitay.jpg">
+					<p>Khoai tây</p>
+					<p id="KT"></p>
+				</div>
+			</div>
+			<div class="product__item col l-3 s-8 m-4">
+				<div class="product__sale">-90%</div>
+				<div class="product__content">
+					<img src="./img/tao.jpg">
+					<p>táo</p>
+					<p id="CT"></p>
+				</div>
+			</div>
+
+			<div class="product__item col l-3 s-8 m-4">
+				<div class="product__sale">-3%</div>
+				<div class="product__content">
+					<img src="./img/cam.jpg">
+					<p>Cam</p>
+					<p id="DL"></p>
+				</div>
+			</div>
+
+
+			<div class="product__item col l-3 s-8 m-4">
+				<div class="product__sale">-5%</div>
+				<div class="product__content">
+					<img src="./img/ot.jpg">
+					<p>Ớt</p>
+					<p id="O"></p>
+				</div>
+			</div>
+
+			<div class="product__item col l-3 s-8 m-4">
+				<div class="product__sale">-15%</div>
+				<div class="product__content">
+					<img src="./img/cachua.jpg">
+					<p>Cà chua</p>
+					<p id="CC"></p>
+				</div>
+			</div>
+
+			<div class="product__item col l-3 s-8 m-4">
+				<div class="product__sale">-13%</div>
+				<div class="product__content">
+					<img src="./img/mangcut.jpg">
+					<p>Măng cụt</p>
+					<p id="CC"></p>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
+	<script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
+
+	<script>
+		// Your web app's Firebase configuration
+		// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+		const firebaseConfig = {
+			apiKey: "AIzaSyCIUndFSyUsdnB3qwN13bvgPE0Y-az4r0s",
+			authDomain: "smfarming.firebaseapp.com",
+			projectId: "smfarming",
+			databaseURL: "https://smfarming-default-rtdb.firebaseio.com/",
+			storageBucket: "smfarming.appspot.com",
+			messagingSenderId: "878194189564",
+			appId: "1:878194189564:web:9f8b2c7642f1567fcce379",
+			measurementId: "G-Q5GWVVPGNK"
+		};
+
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+		firebase.analytics();
+
+
+		var Bongcai = document.getElementById('BC');
+		var dbRef = firebase.database().ref().child('Bong Cai');
+		dbRef.on('value', snap => Bongcai.innerText = snap.val());
+		var Carrot = document.getElementById('CR');
+		var dbRef2 = firebase.database().ref().child('Ca Rot');
+		dbRef2.on('value', snap => Carrot.innerText = snap.val());
+
+		var Otchuong = document.getElementById('OC');
+		var dbRef3 = firebase.database().ref().child('Ot chuong');
+		dbRef3.on('value', snap => Otchuong.innerText = snap.val());
+
+		var Khoaitay = document.getElementById('KT');
+		var dbRef4 = firebase.database().ref().child('Khoai tay');
+		dbRef4.on('value', snap => Khoaitay.innerText = snap.val());
+
+		var Catim = document.getElementById('CT');
+		var dbRef5 = firebase.database().ref().child('Ca tim');
+		dbRef5.on('value', snap => Catim.innerText = snap.val());
+
+		var Dualeo = document.getElementById('DL');
+		var dbRef6 = firebase.database().ref().child('Dua leo');
+		dbRef6.on('value', snap => Dualeo.innerText = snap.val());
+
+		var Ot = document.getElementById('O');
+		var dbRef7 = firebase.database().ref().child('Ot');
+		dbRef7.on('value', snap => Ot.innerText = snap.val());
+
+		var Cachua = document.getElementById('CC');
+		var dbRef8 = firebase.database().ref().child('Ca chua');
+		dbRef8.on('value', snap => Cachua.innerText = snap.val());
+	</script>
+	<script src="./js/menu.js"></script>
+	<script src="./js/header.js"></script>
+	<script src="./js/footer.js"></script>
+</body>
+
+</html>
