@@ -1,5 +1,5 @@
 
-
+// DEVICE CONTROL 
 document.getElementById('btn_on').addEventListener('click', ()=>{
   document.getElementById("led1").src="./img/led_on.png";
   firebase.database().ref().update({"data": "1"});

@@ -45,5 +45,18 @@
 <script src="./js/menu.js"></script>
 <script src="./js/header.js"></script>
 <script src="./js/footer.js"></script>
+<script>
+  next.onclick = function () {
+  console.log("right")
+  right();
+  // imgg.style.transform = 'translateX(400px)';
+}
+prev.onclick = function () {
+  console.log("right")
+  left();
+  // imgg.style.transform = 'translateX(400px)';
+}
+const timeOut = setInterval(right,3000);
+</script>
 
 </html>
