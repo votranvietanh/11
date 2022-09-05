@@ -2,8 +2,11 @@
 body{
   background-image: url(img/backgroundd.jpg);
 }
+.led{
+  margin-right: 2rem;
+
+}
 .led1 {
-  
   text-align: center;
 }
 .center{

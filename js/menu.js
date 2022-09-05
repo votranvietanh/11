@@ -1,9 +1,24 @@
+//------------------USING FOR ONE LANDINGPAGE.
+var header = document.getElementById("menu");
+const btns = header.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {  
+  btns[i].addEventListener("click", function (){ 
+    var current = document.getElementsByClassName("active");
+    if (current.length > 0) {
+      current[0].className = current[0].className.replace(" active", "");
+    }
+    this.className += " active";
+  });
+}
+
+
+
 // CONTROL MENU 
 function openMenu() {
   document.getElementById('menu1').style.display = 'block';
   document.getElementById('open').style.display = 'none';
   document.getElementById('close').style.display = 'block';
-  document.querySelector('.bar').style = `margin-top:245px`;
+  document.querySelector('.bar').style = `margin-top:267px`;
 }
 
 function closeMenu() {
@@ -15,26 +30,26 @@ function closeMenu() {
 }
 var lastScrollTop = 20;
 // element should be replaced with the actual target element on which you have applied scroll, use window in case of no target element.
-window.addEventListener("scroll", function(){ // or window.addEventListener("scroll"....
-   var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
-   if (st > lastScrollTop){
-     
-     document.querySelector('.container-fluid').style  = `
+window.addEventListener("scroll", function () { // or window.addEventListener("scroll"....
+  var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
+  if (st > lastScrollTop) {
+
+    document.querySelector('.container-fluid').style = `
        visibility: hidden;
-       opacity: 0;
+       opacity: 0;  
        transition:  opacity 0.5s linear;
       
       `;
-      // downscroll code
-    } else {
-      // upscroll code
-      document.querySelector('.container-fluid').style = `
+    // downscroll code
+  } else {
+    // upscroll code
+    document.querySelector('.container-fluid').style = `
         visibility: visible;
         opacity: 1;
         transition: opacity 0.5s linear;
       `;
-    }
-   lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+  }
+  lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
 }, false);
 
 

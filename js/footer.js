@@ -15,19 +15,19 @@ const footer = document.querySelector('footer').innerHTML = `<div class="footer_
           <div class="container__about--social ">
             <ul>
               <li>
-                <a href="#"><i class="fab fa-pinterest"></i></a>
+                <a href="#"><i style="display: inline;" class="fab fa-pinterest"></i></a>
               </li>
               <li>
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i style="display: inline;" class="fab fa-facebook-f"></i></a>
               </li>
               <li>
-                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i style="display: inline;" class="fab fa-twitter"></i></a>
               </li>
               <li>
-                <a href="#"><i class="fab fa-dribbble"></i></a>
+                <a href="#"><i style="display: inline;" class="fab fa-dribbble"></i></a>
               </li>
               <li>
-                <a href="#"><i class="fab fa-behance"></i></a>
+                <a href="#"><i style="display: inline;" class="fab fa-behance"></i></a>
               </li>
             </ul>
           </div>
